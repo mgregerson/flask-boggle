@@ -11,7 +11,19 @@ class WordList:
             >>> wl = WordList("test_dictionary.txt")
             >>> wl.words == {'CAT', 'DOG'}
             True
+
+            Checks if word is in word list
+
+            >>> wl = WordList("test_dictionary.txt")
+            >>> wl.check_word('DOG')
+            True
+            >>> wl.check_word('asodifupasdf')
+            False
+            
+            
+
         """
+
 
         self.words = self._read_dict(dict_path)
 
