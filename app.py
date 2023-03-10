@@ -26,7 +26,6 @@ def new_game():
     # game = BoggleGame()
     # games[game_id] = game
 
-
     game_id = str(uuid4())
     game = BoggleGame()
     game_board = []
@@ -35,12 +34,11 @@ def new_game():
     for line in game.board:
         game_board.append(tuple(line))
 
-    response = json.dumps({
+    response = {
         "game_id": game_id,
         "board": game_board
-    })
+    }
     print(game_board)
 
-    #breakpoint()
 
-    return response
+    return jsonify(response)
