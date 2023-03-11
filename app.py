@@ -46,5 +46,9 @@ def new_game():
 
 @app.post('/api/score-word')
 def score_word(game_id, word):
-
+    if not WordList.check_word(game_id, word):
+        return jsonify({"result": "not-a-word"})
+    if not BoggleGame.check_word_on_board(game_id, word):
+        return jsonify({"result": "not-on-board"})
+    return jsonify({"result": "ok"})
 
