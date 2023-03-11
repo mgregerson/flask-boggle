@@ -38,7 +38,7 @@ def new_game():
         "game_id": game_id,
         "board": game_board
     }
-    print(game_board)
 
-
+    games[f"{game_id}"] = response
+    print(games)
     return jsonify(response)
