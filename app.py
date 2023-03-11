@@ -3,6 +3,7 @@ from uuid import uuid4
 import json
 
 from boggle import BoggleGame
+from wordlist import WordList
 
 app = Flask(__name__)
 app.config["SECRET_KEY"] = "this-is-secret"
@@ -42,3 +43,8 @@ def new_game():
     games[f"{game_id}"] = response
     print(games)
     return jsonify(response)
+
+@app.post('/api/score-word')
+def score_word(game_id, word):
+
+
